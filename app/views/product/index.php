@@ -1,9 +1,9 @@
 <div class="ui container">
-    <div class="ui segments">
-        <div class="ui segment">
+
+    <div class="ui segment">
+
             <h4 style="text-align: center; font-size:23px;">List Produk</h4>
-        </div>
-        <div class="ui segment">
+            
             <!-- konten -->
             <?php include_once('../app/views/components/flash.php') ?>
             
@@ -15,9 +15,12 @@
                         <th>Detail Produk</th>
                         <th>Harga</th>
                         <th>Stock</th>
+
+                        <?php if(isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin') : ?>
                         <th class="center aligned">
                             <a href="<?= BASE_URL ?>/product/create" class="ui black tiny button fluid">Create</a>
                         </th>
+                            <?php endif; ?>
                     </tr>
                 </thead>
                 <tbody>
@@ -47,10 +50,13 @@
                             <td>
                                 <?= $product['stock'] ?>
                             </td>
-                            <td class="center aligned collapsing">
-                                <a href="<?= BASE_URL ?>/product/edit/<?= $product['id'] ?>" class="ui basic button mini">Edit</a>
-                                <a href="<?= BASE_URL ?>/product/destroy/<?= $product['id'] ?>" class="ui red button mini" onclick="return confirm('Yakin ingin menghapus <?= $product['kode'] ?>?')">Delete</a>
-                            </td>
+                                <?php if(isset($_SESSION['user']) && $_SESSION['user']['role'] == 'admin') : ?>
+                                <td class="center aligned collapsing">
+                                    <a href="<?= BASE_URL ?>/product/edit/<?= $product['id'] ?>" class="ui basic button mini">Edit</a>
+                                    <a href="<?= BASE_URL ?>/product/destroy/<?= $product['id'] ?>" class="ui red button mini" onclick="return confirm('Yakin ingin menghapus <?= $product['kode'] ?>?')">Delete</a>
+                                </td>
+                            <?php endif; ?>
+
                         </tr>
                     <?php endforeach ?>
                 </tbody>

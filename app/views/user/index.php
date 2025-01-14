@@ -23,7 +23,7 @@
 					<td><?php echo $user['username'] ?></td>
 					<td><?php echo $user['role'] ?></td>
 					<td class="collapsing">
-						<a href="<?php echo BASE_URL ?>/user/edit/<?php echo $user['id'] ?>" class="ui yellow mini labeled icon button">
+						<a href="<?php echo BASE_URL ?>/user/edit/<?php echo $user['id'] ?>" class="ui yellow mini labeled icon button  <?php echo $user['id'] == 1 ? 'disabled' : '' ?>">
 							<i class="edit icon"></i>Ubah
 						</a>
 						<a href="<?php echo BASE_URL ?>/user/destroy/<?php echo $user['id'] ?>" class="ui mini labeled negative icon button <?php echo $user['id'] == 1 ? 'disabled' : '' ?>" onclick="return confirm('Yakin ingin menghapus?')">

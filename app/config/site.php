@@ -2,7 +2,7 @@
 
 // Web config
 define('BASE_URL', 'http://localhost/pemrogramanWeb/phpmvc-shop-app/public');
-define('APP_NAME', 'Belanja Online TGD');
+define('APP_NAME', 'Testing Web');
 
 // DB config
 define('DB_HOST', 'localhost');

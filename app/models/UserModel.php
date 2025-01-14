@@ -7,7 +7,7 @@ class UserModel extends BaseModel{
 
     public function hash($teks)
     {
-        return md5($teks);
+        return password_hash($teks, PASSWORD_BCRYPT);
     }
     public function storeUser($data)
     {
@@ -36,25 +36,29 @@ return $this->db->count();
    
     public function updateUser($data, $id)
     {
-        // query SQL
+       // query SQL
         $query = "UPDATE $this->table SET
-                        username=:username,
-                        password=:password,
-                        role=:role
-                        WHERE id=:id";
+        username=:username,
+        password=:password,
+        role=:role
+        WHERE id=:id";
 
-$hashedPassword = password_hash($data['inp_pass'], PASSWORD_BCRYPT);
+        // Hash password menggunakan password_hash
+        $hashedPassword = password_hash($data['inp_pass'], PASSWORD_BCRYPT);
 
         // data binding untuk mencegah SQL Injection
         $this->db->query($query);
         $this->db->bind('username', $data['inp_user']);
-        $this->db->bind('password', $hashedPassword);
+        $this->db->bind('password', $hashedPassword);  // Menggunakan password yang sudah di-hash
         $this->db->bind('role', $data['inp_role']);
         $this->db->bind('id', $id);
+
         // eksekusi query
         $this->db->execute();
+
         // kembalikan jumlah data yang diubah ke controller
         return $this->db->count();
+
     }
 
 
