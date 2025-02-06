@@ -27,6 +27,17 @@ class Product extends BaseController
         }
         return parent::redirect('product', 'index');
     }
+    // metode detail
+    public function detail($id){
+        
+        // panggil data yang akan diubah
+        $data['product'] = $this->model('ProductModel')->find($id);
+        // $this->view('layout/header');
+        // kirimkan data ke view
+        $this->view('product/detail', $data);
+        // $this->view('layout/footer');
+    }
+
     // metode edit
     public function edit($id)
     {
