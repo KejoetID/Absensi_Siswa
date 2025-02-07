@@ -1,4 +1,4 @@
-<div class="ui container">
+<div class="ui container mt-4">
     <div class="ui card">
         <div class="content">
             <div class="header">Happy Shopping</div>

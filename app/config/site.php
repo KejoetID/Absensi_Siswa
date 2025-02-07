@@ -1,8 +1,8 @@
 <?php 
 
 // Web config
-define('BASE_URL', 'http://localhost/pemrogramanWeb/phpmvc-shop-app/public');
-define('APP_NAME', 'Testing Web');
+define('BASE_URL', 'http://localhost/Absensi-Siswa/public');
+define('APP_NAME', 'Kejoed Id');
 
 // DB config
 define('DB_HOST', 'localhost');

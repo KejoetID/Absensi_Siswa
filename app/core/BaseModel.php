@@ -41,7 +41,7 @@ class BaseModel
         );
         $this->db->bind('id', $id);
         $this->db->execute();
-        return $this->db->count();
+        return $this->db->rowCount();
     }
 
     public function store($data){
@@ -53,7 +53,7 @@ class BaseModel
             $this->db->bind($key, $value);
         }
         $this->db->execute();
-        return $this->db->count();
+        return $this->db->rowCount();
     }
 
 }

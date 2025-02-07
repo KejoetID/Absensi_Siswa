@@ -1,5 +1,5 @@
 <body>
-    <div class="ui bottom fixed one item blue inverted menu">
+    <div class="ui bottom fixed one item white inverted menu">
         <div class="item">
             <b>Copyright&copy;</b>
             <?= date('Y') ?> -

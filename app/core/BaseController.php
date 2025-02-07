@@ -2,10 +2,10 @@
 
 class BaseController {
     //method untuk menampilkan konten didalam layout
-    public static function view($view, $data = []) {
-        include "../app/views/layout/header.php";
-        include "../app/views/{$view}.php";
-        include "../app/views/layout/footer.php";
+        public static function view($view, $data = []) {
+            include "../app/views/layout/header.php";
+            include "../app/views/{$view}.php";
+            include "../app/views/layout/footer.php";
     }
     //method untuk beralih halaman otomatis setelah proses
     public static function redirect($controller, $method, $data = []){

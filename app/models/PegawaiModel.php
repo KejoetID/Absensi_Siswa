@@ -21,7 +21,7 @@ class PegawaiModel extends BaseModel
         // eksekusi query
         $this->db->execute();
         // kembalikan jumlah data yang tersimpan ke controller
-        return $this->db->count();
+        return $this->db->rowCount();
     }
     // metode update produk
     public function updatePegawai($data, $id)
@@ -43,6 +43,6 @@ class PegawaiModel extends BaseModel
         // eksekusi query
         $this->db->execute();
         // kembalikan jumlah data yang diubah ke controller
-        return $this->db->count();
+        return $this->db->rowCount();
     }
 }

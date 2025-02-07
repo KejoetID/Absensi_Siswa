@@ -1,7 +1,7 @@
-<div class="ui container">
+<div class="ui container mt-4">
     <div class="ui segment">
-        <h2 class="ui centered header">Data Table</h2>
-
+        <h2 class="ui centered header">List Produk</h2>
+        <?php include_once('../app/views/components/flash.php') ?>
         <div class="ui grid" style="margin-bottom: 1em;">
             <div class="left floated eight wide column">
                 
@@ -9,7 +9,7 @@
             
         </div>
 
-        <table class="ui celled table">
+        <table class="ui table ">
             <thead>
                 <tr>
                     
@@ -18,7 +18,7 @@
                     <th>Produk</th>
                     <th>Harga</th>
                     <th>Stok</th>
-                    <th class="center aligned">Detail</th>
+                        <th class="center aligned">Aksi</th>
                 </tr>
             </thead>
             <tbody>
@@ -28,11 +28,11 @@
                         <td><?= $product['kode'] ?></td>
                         <td>
                             <div class="ui list">
-                                <div class="item">
+                                <div class="item">  
                                     <a href="<?= BASE_URL ?>/product/show/<?= $product['id'] ?>"><?= $product['nama'] ?></a>
                                 </div>
                                 <div class="item">
-                                    <div class="description"><?= $product['deskripsi'] ?></div>
+                                    <!-- <div class="description"><?= $product['deskripsi'] ?></div> -->
                                 </div>
                             </div>
                         </td>
@@ -59,7 +59,7 @@
                                             <i class="trash icon"></i>
                                         </button>
                                     </div>
-                                <?php elseif ($_SESSION['user']['role'] == 'customer'): ?>
+                                <?php elseif ($_SESSION['user']): ?>
                                     <button class="ui basic button"
                                         onclick="window.location.href='<?= BASE_URL ?>/product/detail/<?= $product['id'] ?>'">
                                         <i class="eye icon"></i>

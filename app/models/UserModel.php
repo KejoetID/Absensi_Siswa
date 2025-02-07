@@ -31,7 +31,7 @@ $this->db->bind('role', $data['inp_role']);
 $this->db->execute();
 
 // kembalikan jumlah data yang tersimpan ke controller
-return $this->db->count();
+return $this->db->rowCount();
     }
    
     public function updateUser($data, $id)
@@ -57,7 +57,7 @@ return $this->db->count();
         $this->db->execute();
 
         // kembalikan jumlah data yang diubah ke controller
-        return $this->db->count();
+        return $this->db->rowCount();
 
     }
 

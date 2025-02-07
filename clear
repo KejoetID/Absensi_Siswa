@@ -1,0 +1,123 @@
+[33mcommit 3a9266a0fce4ee706fad53369ef64250bae184c0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mSiswa[m[33m, [m[1;32msementara[m[33m, [m[1;32mSiswa-develompent[m[33m)[m
+Author: alfinf2 <alfinfahreza090404@gmail.com>
+Date:   Thu Feb 6 14:17:18 2025 +0700
+
+    Perubahan Besar
+
+[33mcommit 819fd7d49d9be9c07515e4e3a49ba08b49dcbafd[m
+Author: alfinf2 <alfinfahreza090404@gmail.com>
+Date:   Tue Jan 14 13:38:07 2025 +0700
+
+    Penghapusan Migration
+
+[33mcommit 0c3bb92f35f8f745b93cb60bd66394939cb2ddd3[m
+Author: alfinf2 <alfinfahreza090404@gmail.com>
+Date:   Wed Aug 14 12:34:29 2024 +0700
+
+    Hash User, Login, Register
+
+[33mcommit 4fc903677bf9e560ae5f927618e6775c747f516f[m
+Author: alfinf2 <alfinfahreza090404@gmail.com>
+Date:   Mon Aug 12 14:05:09 2024 +0700
+
+    Menambahkan Fitur Tambah, Update, Delete
+
+[33mcommit c8e6dc802a0c59146a2dd83e9e4d376bbb9519af[m[33m ([m[1;32mmain[m[33m)[m
+Merge: 5dfccf7 1b357d3
+Author: Muhammad Rasyid Sinaga <159446547+mrsinagadev@users.noreply.github.com>
+Date:   Fri Aug 9 16:46:21 2024 +0700
+
+    Merge pull request #10 from mrsinagadev/sementara
+    
+    Menambahkan file products database
+
+[33mcommit 1b357d36fa21769f47cc6b36b0ff1fd379b510b1[m
+Author: unknown <rasyidsinaga233@gmail.com>
+Date:   Fri Aug 9 16:44:04 2024 +0700
+
+    Menambahkan file products database
+
+[33mcommit 5dfccf739840168ee09a05b9d71153f751d308c9[m
+Merge: a8d307e 35d72af
+Author: Muhammad Rasyid Sinaga <159446547+mrsinagadev@users.noreply.github.com>
+Date:   Sun Jul 28 08:04:47 2024 +0700
+
+    Merge pull request #9 from mrsinagadev/sementara
+    
+    Menyelesaikan fitur tambah, edit dan hapus berserta flash message-nya
+
+[33mcommit 35d72af9fb9000d0b264cb1eb81fbb752930d548[m
+Author: unknown <rasyidsinaga233@gmail.com>
+Date:   Sun Jul 28 07:59:00 2024 +0700
+
+    Menyelesaikan fitur tambah, edit dan hapus beserta flash message-nya
+
+[33mcommit a8d307efd7577bd8f86daea17866c6c1ea3e177a[m
+Merge: 93b197f 4993d01
+Author: Muhammad Rasyid Sinaga <159446547+mrsinagadev@users.noreply.github.com>
+Date:   Thu Jul 25 20:26:25 2024 +0700
+
+    Merge pull request #6 from mrsinagadev/percobaan
+    
+    Percobaan
+
+[33mcommit 4993d01e08af864b9e28dd2145cde7e8970b084c[m
+Author: unknown <rasyidsinaga233@gmail.com>
+Date:   Thu Jul 25 20:22:26 2024 +0700
+
+    Menyelesaikan fitur read dan create di product
+
+[33mcommit 89a05d8c67317801f3483f96245780daec69ebc7[m
+Merge: eac3cf8 93b197f
+Author: unknown <rasyidsinaga233@gmail.com>
+Date:   Thu Jul 25 18:00:27 2024 +0700
+
+    Merge branch 'main' of https://github.com/mrsinagadev/phpmvc-shop-app
+
+[33mcommit 93b197f10eca2cd64b4728e8660fba2e3e899d58[m
+Merge: 9e341f4 013677a
+Author: Network Engineer <164129420+irwanbtr1@users.noreply.github.com>
+Date:   Thu Jul 25 10:45:15 2024 +0700
+
+    Merge pull request #5 from mrsinagadev/coba
+    
+    Memperbaharui tampilan tambah user
+
+[33mcommit 013677a6ad64f47322a8dfb8efa45cfeaa2b09cc[m
+Author: Network Engineer <irwansyaputra234@gmail.com>
+Date:   Thu Jul 25 10:43:17 2024 +0700
+
+    Memperbaharui tampilan tambah user
+
+[33mcommit 9e341f4cb48e076ef7e95b83259105aee0aa7aa2[m
+Merge: 691ce6d 4698dae
+Author: Network Engineer <164129420+irwanbtr1@users.noreply.github.com>
+Date:   Thu Jul 25 10:25:51 2024 +0700
+
+    Merge pull request #3 from mrsinagadev/testing
+    
+    Mengubah user
+
+[33mcommit 4698daeac640965c7a39b4f12767f711ba53a12c[m
+Author: Network Engineer <irwansyaputra234@gmail.com>
+Date:   Thu Jul 25 10:21:54 2024 +0700
+
+    Mengubah user
+
+[33mcommit eac3cf89807435d2cfedb45449c3d954a732fddb[m
+Author: unknown <rasyidsinaga233@gmail.com>
+Date:   Wed Jul 24 10:52:40 2024 +0700
+
+    menambahkan file index di produk
+
+[33mcommit 691ce6dfaa66bb6a58a64eaddd326b0bcbf29278[m
+Author: Network Engineer <irwansyaputra234@gmail.com>
+Date:   Wed Jul 24 10:46:28 2024 +0700
+
+    fitur user
+
+[33mcommit 1abe8dd1d4185b2471af8dce3487ef67478aa85c[m
+Author: unknown <rasyidsinaga233@gmail.com>
+Date:   Wed Jul 24 09:51:54 2024 +0700
+
+    Kommit pertama

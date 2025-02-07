@@ -27,9 +27,9 @@ class Database
         }
     }
     // metode persiapan query
-    public function query($q)
+    public function query($query)
     {
-        $this->stmt = $this->dbh->prepare($q);
+        $this->stmt = $this->dbh->prepare($query);
     }
     // metode data binding, untuk mencegah SQL injection
     public function bind($param, $value, $type = null)
@@ -70,7 +70,7 @@ class Database
         return $this->stmt->fetch(PDO::FETCH_ASSOC);
     }
     // metode hitung data yang diperbarui
-    public function count()
+    public function rowCount()
     {
         return $this->stmt->rowCount();
     }
