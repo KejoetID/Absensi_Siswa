@@ -26,7 +26,7 @@
 <body>
 
     <!-- Navbar dengan Bootstrap -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
         <div class="container">
             <a class="navbar-brand text-white" href="<?= BASE_URL; ?>"><?= APP_NAME ?></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
