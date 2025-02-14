@@ -8,4 +8,5 @@ define('APP_NAME', 'Kejoed Id');
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
-define('DB_NAME', 'shop-app');
+define('DB_NAME', 'phpmvc');
+// define('DB_NAME', 'phpmvc');

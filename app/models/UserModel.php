@@ -1,65 +1,59 @@
 <?php
 
-class UserModel extends BaseModel{
-    //ubah propert table yang ada pada class basemodel
-    //dengan nama table yang digunakan saat model ini dipanggil
-    protected $table = 'users';
+class UserModel extends BaseModel {
+    // Sesuaikan dengan tabel yang benar
+    protected $table = 'usersiswa';
 
-    public function hash($teks)
-    {
+    public function hash($teks) {
         return password_hash($teks, PASSWORD_BCRYPT);
     }
-    public function storeUser($data)
-    {
-        // query SQL
-$query = "INSERT INTO $this->table (
-    username, password, role
-) VALUES (
-    :username, :password, :role
-)";
 
-// Hash password menggunakan password_hash
-$hashedPassword = password_hash($data['inp_pass'], PASSWORD_BCRYPT);
+    public function storeUser($data) {
+        // Query SQL untuk menambahkan user ke tabel usersiswa
+        $query = "INSERT INTO $this->table (
+            nisn, nama, password
+        ) VALUES (
+            :nisn, :nama, :password
+        )";
 
-// data binding mencegah SQL Injection dari form
-$this->db->query($query);
-$this->db->bind('username', $data['inp_user']);
-$this->db->bind('password', $hashedPassword); // Menggunakan password yang sudah di-hash
-$this->db->bind('role', $data['inp_role']);
+        // Hash password
+        $hashedPassword = password_hash($data['password'], PASSWORD_BCRYPT);
 
-// eksekusi query
-$this->db->execute();
-
-// kembalikan jumlah data yang tersimpan ke controller
-return $this->db->rowCount();
-    }
-   
-    public function updateUser($data, $id)
-    {
-       // query SQL
-        $query = "UPDATE $this->table SET
-        username=:username,
-        password=:password,
-        role=:role
-        WHERE id=:id";
-
-        // Hash password menggunakan password_hash
-        $hashedPassword = password_hash($data['inp_pass'], PASSWORD_BCRYPT);
-
-        // data binding untuk mencegah SQL Injection
+        // Data binding untuk menghindari SQL Injection
         $this->db->query($query);
-        $this->db->bind('username', $data['inp_user']);
-        $this->db->bind('password', $hashedPassword);  // Menggunakan password yang sudah di-hash
-        $this->db->bind('role', $data['inp_role']);
-        $this->db->bind('id', $id);
+        $this->db->bind('nisn', $data['nisn']);
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('password', $hashedPassword);
 
-        // eksekusi query
+        // Eksekusi query
         $this->db->execute();
 
-        // kembalikan jumlah data yang diubah ke controller
-        return $this->db->rowCount();
-
+        // Mengembalikan jumlah data yang tersimpan ke controller
+        return $this->db->count();
     }
 
+    public function updateUser($data, $id) {
+        // Query SQL untuk memperbarui data user
+        $query = "UPDATE $this->table SET
+            nisn = :nisn,
+            nama = :nama,
+            password = :password
+            WHERE id = :id";
 
+        // Hash password
+        $hashedPassword = password_hash($data['password'], PASSWORD_BCRYPT);
+
+        // Data binding
+        $this->db->query($query);
+        $this->db->bind('nisn', $data['nisn']);
+        $this->db->bind('nama', $data['nama']);
+        $this->db->bind('password', $hashedPassword);
+        $this->db->bind('id', $id);
+
+        // Eksekusi query
+        $this->db->execute();
+
+        // Mengembalikan jumlah data yang diperbarui ke controller
+        return $this->db->count();
     }
+}

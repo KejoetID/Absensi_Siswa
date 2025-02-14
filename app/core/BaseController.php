@@ -2,10 +2,15 @@
 
 class BaseController {
     //method untuk menampilkan konten didalam layout
-        public static function view($view, $data = []) {
-            include "../app/views/layout/header.php";
-            include "../app/views/{$view}.php";
-            include "../app/views/layout/footer.php";
+    public static function view($view, $data = []) {
+        // Cek apakah view yang diminta adalah halaman login
+        if ($view === 'login/index' || $view === 'siswa/hai') {
+            include "../app/views/{$view}.php"; // Memuat hanya tampilan login
+        } else {
+            include "../app/views/layout/header.php"; // Memuat header untuk tampilan lainnya
+            include "../app/views/{$view}.php";       // Memuat tampilan
+            include "../app/views/layout/footer.php"; // Memuat footer untuk tampilan lainnya
+        }
     }
     //method untuk beralih halaman otomatis setelah proses
     public static function redirect($controller, $method, $data = []){

@@ -17,40 +17,48 @@ class Register extends BaseController
     public function proses(){
         $form_data = $_POST;
         $password = '';
-        if($form_data['password'] === $form_data['konfirmasi_password']){
-            //cek username yang terdaftar
-            $user = $this->model('UserModel')->where('username', $form_data['username']);
-            if($user){
-                $_SESSION['flash'] = [
-                    'type' => 'negative',
-                    'title' => 'Register Gagal',
-                    'message' => 'Username tidak terdaftar!'
-                ];
-                return parent::redirect('register', 'index');
-            }
-            $password = $this->model('UserModel')->hash($form_data['password']);
-        }
-        else{
+    
+        // Validasi Konfirmasi Password
+        if ($form_data['password'] !== $form_data['konfirmasi_password']) {
             $_SESSION['flash'] = [
                 'type' => 'negative',
-                'title' => 'Register Gagal',
+                'title' => 'Registrasi Gagal',
                 'message' => 'Konfirmasi Password tidak cocok'
             ];
             return parent::redirect('register', 'index');
         }
-        $role = 'customer';
+    
+        // Cek apakah NISN sudah terdaftar
+        $user = $this->model('UserModel')->where('nisn', $form_data['nisn']);
+        if ($user) {
+            $_SESSION['flash'] = [
+                'type' => 'negative',
+                'title' => 'Registrasi Gagal',
+                'message' => 'NISN sudah terdaftar!'
+            ];
+            return parent::redirect('register', 'index');
+        }
+    
+        // Hash password sebelum menyimpan ke database
+        $password = password_hash($form_data['password'], PASSWORD_BCRYPT);
+    
+        // Simpan data ke database
         $data = [
-            'username' => $form_data['username'],
-            'password' => $password,
-            'role' => $role
+            'nisn' => $form_data['nisn'],
+            'nama' => $form_data['nama'],
+            'password' => $password
         ];
+        
         $result = $this->model('UserModel')->store($data);
-        if($result){
-            $this->success('Registrasi berhasil', 'Silahkan login menggunakan username anda!');
+    
+        // Cek hasil penyimpanan
+        if ($result) {
+            $this->success('Registrasi Berhasil', 'Silahkan login dengan NISN Anda!');
             return parent::redirect('login', 'index');
-        }else{
-            $this->error('Registrasi', 'Silahkan coba lagi dalam beberapa saat!');
+        } else {
+            $this->error('Registrasi', 'Terjadi kesalahan, silakan coba lagi.');
             return parent::redirect('register', 'index');
         }
     }
+    
 }
